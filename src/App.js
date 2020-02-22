@@ -7,7 +7,7 @@ import Favorite from './modules/Favorite';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename='/'>
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/index' exact component={Home}/>
