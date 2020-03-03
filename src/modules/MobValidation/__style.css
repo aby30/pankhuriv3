@@ -57,32 +57,34 @@
     @media (max-width: 640px) {
       .sliderValidation__title {
         width: 75%; } }
-  .sliderValidation__input > input {
-    padding: 0 0 18px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #ffffff;
-    margin-bottom: 38px;
-    background-color: transparent;
-    color: #ffffff;
-    font-size: 24px;
-    width: 100%; }
-  .sliderValidation__input.otp > input {
-    padding: 0 0 18px 5px;
-    letter-spacing: 42px;
-    border-bottom: none;
-    background-image: -webkit-gradient(linear, right top, left top, color-stop(70%, white), color-stop(0%, rgba(255, 255, 255, 0)));
-    background-image: -webkit-linear-gradient(right, white 70%, rgba(255, 255, 255, 0) 0%);
-    background-image: -o-linear-gradient(right, white 70%, rgba(255, 255, 255, 0) 0%);
-    background-image: linear-gradient(to left, white 70%, rgba(255, 255, 255, 0) 0%);
-    background-position: bottom;
-    background-size: 50px 1px;
-    background-repeat: repeat-x;
-    background-position-x: 35px;
-    width: 60%; }
-    @media (max-width: 640px) {
-      .sliderValidation__input.otp > input {
-        width: 80%; } }
+  .sliderValidation__input {
+    position: relative; }
+    .sliderValidation__input > input {
+      padding: 0 0 18px;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #ffffff;
+      margin-bottom: 38px;
+      background-color: transparent;
+      color: #ffffff;
+      font-size: 24px;
+      width: 100%; }
+    .sliderValidation__input.otp > input {
+      padding: 0 0 18px 5px;
+      letter-spacing: 42px;
+      border-bottom: none;
+      background-image: -webkit-gradient(linear, right top, left top, color-stop(70%, white), color-stop(0%, rgba(255, 255, 255, 0)));
+      background-image: -webkit-linear-gradient(right, white 70%, rgba(255, 255, 255, 0) 0%);
+      background-image: -o-linear-gradient(right, white 70%, rgba(255, 255, 255, 0) 0%);
+      background-image: linear-gradient(to left, white 70%, rgba(255, 255, 255, 0) 0%);
+      background-position: bottom;
+      background-size: 50px 1px;
+      background-repeat: repeat-x;
+      background-position-x: 35px;
+      width: 60%; }
+      @media (max-width: 640px) {
+        .sliderValidation__input.otp > input {
+          width: 80%; } }
   .sliderValidation__submitCta button {
     height: 50px;
     width: 170px;
@@ -98,3 +100,12 @@
         height: 50px;
         width: 175px;
         font-size: 14px; } }
+
+.error {
+  position: absolute;
+  bottom: 10px;
+  color: #EC145A;
+  font-size: 12px;
+  display: none; }
+  .error.showError {
+    display: block; }

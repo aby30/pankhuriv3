@@ -35,6 +35,12 @@
       width: fit-content;
       margin: 0 auto;
     }
+    > div:nth-child(1) {
+      width: auto !important;
+    }
+    video {
+      width: auto !important;
+    }
   }
   &__imgShareMedias {
     position: absolute;

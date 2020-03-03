@@ -12,7 +12,19 @@ import './__style.css';
 class Header extends Component<Props> {
   constructor(props) {
     super(props);
-    this.state = {menuSlideOpen: false};
+    this.state = {menuSlideOpen: false, isLoggedIn: false};
+  }
+  componentDidMount() {
+
+    if (this.getCookie('ucheck')) {
+      let { isLoggedIn } = this.state
+      this.setState({isLoggedIn: !isLoggedIn})
+    }
+  }
+  getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
   }
   openSlider = () => {
     const { menuSlideOpen } = this.state
@@ -20,7 +32,7 @@ class Header extends Component<Props> {
   }
 
   render() {
-    const { menuSlideOpen } = this.state
+    const { menuSlideOpen, isLoggedIn = true } = this.state
     const { variant = 'primary' } = this.props
     return (
       <div className={`header__wrap ${variant == 'secondary' ? 'secondaryHeader' : ''}`}>
@@ -37,6 +49,7 @@ class Header extends Component<Props> {
           {/* {menuSlideOpen && <Overlay onClickFunc={this.openSlider}/>} */}
           <div className={`header__menuSliderWrap ${menuSlideOpen ? 'SlideOpen' : ''}`}>
             <div className="header__menuSliderInner">
+            {isLoggedIn && (
               <div className="header__menuSliderTitleBlock">
                 <div className="header__menuSliderTitleImg">
                   <img src="https://via.placeholder.com/85x85" />
@@ -53,7 +66,14 @@ class Header extends Component<Props> {
                   </div>
                 </div>
               </div>
+            )}
               <div className="header__menuSliderOptionsWrap">
+                <Link to="/gallery" className="header__menuSliderOption">
+                  <span className="header__menuSliderOptionIcon">
+                    <img src={save} />
+                  </span>
+                  Gallery
+                </Link>
                 <Link to="/favorite" className="header__menuSliderOption">
                   <span className="header__menuSliderOptionIcon">
                     <img src={save} />

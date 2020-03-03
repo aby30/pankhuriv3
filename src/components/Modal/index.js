@@ -9,6 +9,7 @@ import twitter from '../common/icons/twitter.png';
 import heart from '../common/icons/save.png';
 import chatCart from '../common/icons/ChatCart.png';
 import './__style.css';
+import ReactPlayer from 'react-player';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -68,7 +69,8 @@ class Modal extends React.Component {
               {imageList.map((item, index) => {
                 return (
                   <div className={`modal__img ${imgToShow === index ? 'showImg' : ''}`} key={item.toString()}>
-                    <img src={item}/>
+                    {/*<img src={item}/>*/}
+                    <ReactPlayer url={item.video} playing={imgToShow===index} controls style={{width: 'auto'}}/>
                     <div className="modal__imgActions">
                       <img src={share} onClick={this.showShareFn}/>
                       <img src={heart} />
@@ -129,8 +131,8 @@ class Modal extends React.Component {
   }
 }
 
-Modal.defaultProps = {
+{/*Modal.defaultProps = {
   imgToShowProp: 1
-}
+}*/}
 
 export default Modal;
