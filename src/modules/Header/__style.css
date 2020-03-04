@@ -63,6 +63,7 @@
   right: 0px;
   height: 100vh;
   max-width: 285px;
+  min-width: 260px;
   z-index: 11;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
