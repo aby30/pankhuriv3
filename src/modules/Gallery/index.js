@@ -22,7 +22,7 @@ class Gallery extends Component<Props> {
   }
 
   componentDidMount() {
-    const apiUrl = 'http://15.206.91.199:8080/get_all'
+    const apiUrl = 'https://15.206.91.199:8080/get_all'
     fetch(apiUrl).then(res => res.json())
       .then(response => {
         this.setState({
