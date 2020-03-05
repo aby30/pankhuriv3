@@ -28,7 +28,7 @@ class MobValidation extends Component<Props> {
     if (this.mobNum.value.length === 10) {
       let sessionId = Math.floor(Math.random() * 100) + 1
       this.setState({sessionIdState: sessionId})
-      const apiUrl = `https://15.206.91.199:8080/send_otp?session_id=${sessionId}&phone_no=${this.mobNum.value}`
+      const apiUrl = `https://15.206.91.199:443/send_otp?session_id=${sessionId}&phone_no=${this.mobNum.value}`
       fetch(apiUrl).then(res => res.json())
         .then(response => {
           if (response.Status === 'Success') {
@@ -49,7 +49,7 @@ class MobValidation extends Component<Props> {
     const { errorMsgOtp, sessionIdState } = this.state
 
     if (this.otpNum.value.length === 6) {
-      const apiUrl = `https://15.206.91.199:8080/validate_otp?session_id=${sessionIdState}&phone_no=${this.mobNum.value}&otp=${this.otpNum.value}`
+      const apiUrl = `https://15.206.91.199:443/validate_otp?session_id=${sessionIdState}&phone_no=${this.mobNum.value}&otp=${this.otpNum.value}`
       fetch(apiUrl).then(res => res.json())
         .then(response => {
           if (response.status === 'True') {
