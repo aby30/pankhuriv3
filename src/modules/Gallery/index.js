@@ -3,6 +3,9 @@ import Modal from '../../components/Modal';
 import Masonry from 'react-masonry-css';
 import chat from '../../components/common/icons/chat.png';
 import deleteIcon from '../../components/common/icons/delete.png';
+import heart from '../../components/common/icons/save.png';
+import savedHeart from '../../components/common/icons/savedHeart.png';
+import { getCookie } from '../../components/common/helper';
 import MobValidation from '../MobValidation';
 import Header from '../Header';
 
@@ -11,7 +14,8 @@ import './__style.css';
 
 class Gallery extends Component<Props> {
   constructor(props) {
-    super(props);
+    super(props)
+    this.addFavourite = this.addFavourite.bind(this)
     this.state = {
       showModal: false,
       modalImgToShow: 0,
@@ -47,6 +51,27 @@ class Gallery extends Component<Props> {
     this.setState({
       showModal: false,
     });
+  }
+  openMobValidSlider = () => {
+    const { showMobileValidationScreen } = this.state
+    this.setState({showMobileValidationScreen: !showMobileValidationScreen})
+  }
+  addFavourite = (lehengaId) => {
+    const allCookies = document.cookie
+    const allCookieArr = allCookies.split("; ")
+    if (allCookies.indexOf("; ucheck=") != -1) {
+      const userMobNum = getCookie('ucheck')
+      const addFavUrl = `https://15.206.91.199:443/add_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
+      fetch(addFavUrl).then(res => res.json())
+        .then(response => {
+          if (response === 'FAVOURITES INSERTED') {
+            console.log('savedd')
+          }
+        })
+
+    } else {
+      this.openMobValidSlider()
+    }
   }
 
   render() {
@@ -84,7 +109,7 @@ class Gallery extends Component<Props> {
                   <div className="favorite__imgWrap" key={eachItem.id}>
                     {/*<img src="https://res.cloudinary.com/abyy30/image/upload/v1581962546/img1_mqv5vl.jpg" onClick={() => this.showModalFunc(1)}/>*/}
                     <img src={eachItem.photo} onClick={() => this.showModalFunc(index)}/>
-                    <div className="favorite__delete"><img src={deleteIcon} /></div>
+                    {/*<div className="favorite__delete"><img src={heart} onClick={() => this.addFavourite(eachItem.id)}/></div>*/}
                   </div>
                 ))
                 }

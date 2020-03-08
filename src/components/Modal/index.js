@@ -8,8 +8,9 @@ import facebook from '../common/icons/facebook.png';
 import twitter from '../common/icons/twitter.png';
 import heart from '../common/icons/save.png';
 import chatCart from '../common/icons/ChatCart.png';
-import './__style.css';
 import ReactPlayer from 'react-player';
+import { getCookie } from '../../components/common/helper';
+import './__style.css';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -17,11 +18,17 @@ class Modal extends React.Component {
     this.state = {
       imgToShow: '',
       showShare: false,
+      userMobNum: ''
     }
   }
   componentDidMount() {
-    const { imgToShowProp } = this.props;
+    const { imgToShowProp } = this.props
     this.setState({ imgToShow: imgToShowProp})
+    const allCookies = document.cookie
+    if (allCookies.indexOf("; ucheck=") != -1) {
+      const userMobNumCookie = getCookie('ucheck')
+      this.setState({ userMobNum: userMobNumCookie})
+    }
   }
 
   next = () => {
@@ -40,6 +47,21 @@ class Modal extends React.Component {
     let { showShare } = this.state;
     this.setState({ showShare: !showShare });
   }
+  addFavourite = (lehengaId) => {
+    const {userMobNum} = this.state
+    const allCookies = document.cookie
+    if (allCookies.indexOf("; ucheck=") != -1) {
+      const userMobNum = getCookie('ucheck')
+      const addFavUrl = `https://15.206.91.199:443/add_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
+      fetch(addFavUrl).then(res => res.json())
+        .then(response => {
+          if (response === 'FAVOURITES INSERTED') {
+            console.log('savedd')
+          }
+        })
+
+    }
+  }
 
   render() {
 
@@ -51,7 +73,7 @@ class Modal extends React.Component {
       "https://res.cloudinary.com/abyy30/image/upload/v1581962546/img5_cy4bcu.jpg",
       "https://res.cloudinary.com/abyy30/image/upload/v1581962546/img6_arfaxj.jpg"
     ], imgToShowProp, closeModal } = this.props
-    const { imgToShow, showShare } = this.state
+    const { imgToShow, showShare, userMobNum } = this.state
     return (
       <div className="modal__mainWrap">
         <div className="modal__inner">
@@ -73,7 +95,9 @@ class Modal extends React.Component {
                     <ReactPlayer url={item.video} playing={imgToShow===index} controls style={{width: 'auto'}}/>
                     <div className="modal__imgActions">
                       <img src={share} onClick={this.showShareFn}/>
-                      <img src={heart} />
+                      {userMobNum.length > 1 && (
+                        <img src={heart} onClick={() => this.addFavourite(item.id)}/>)
+                      }
                       <img src={chatCart} />
                       <div className={`modal__imgShareMedias ${showShare ? 'showShareModal' : ''}`}>
                         <div className="modal__imgShareMediaInner">

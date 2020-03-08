@@ -102,14 +102,17 @@
     .header__menuSliderTitleBlock {
       padding: 21px 31px; } }
 
-@media (min-width: 641px) {
-  .header__menuSliderTitleDetails {
-    text-align: left;
-    display: inline-block;
-    width: 70%; } }
+.header__menuSliderTitleDetails {
+  vertical-align: middle; }
+  @media (min-width: 641px) {
+    .header__menuSliderTitleDetails {
+      text-align: left;
+      display: inline-block;
+      width: 70%; } }
 
 .header__menuSliderTitleImg {
-  margin-bottom: 13px; }
+  margin-bottom: 13px;
+  vertical-align: middle; }
   .header__menuSliderTitleImg > img {
     border-radius: 50%; }
   @media (min-width: 641px) {

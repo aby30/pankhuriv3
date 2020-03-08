@@ -160,8 +160,6 @@
     /* change div to reference your elements you put in <Masonry> */
     overflow: hidden;
     margin-bottom: 30px; }
-  .home__secondFoldImgsGrid .my-masonry-grid_column:nth-child(1) > div:last-child {
-    display: none; }
 
 .home__secondFoldImgsGridCta {
   text-align: center;

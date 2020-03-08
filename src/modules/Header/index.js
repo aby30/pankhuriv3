@@ -7,19 +7,21 @@ import gift from '../../components/common/icons/gift.png';
 import save from '../../components/common/icons/save.png';
 import orders from '../../components/common/icons/gift.png';
 import Overlay from '../../components/Overlay';
+import { getCookie } from '../../components/common/helper';
 import './__style.css';
 
 class Header extends Component<Props> {
   constructor(props) {
     super(props);
-    this.state = {menuSlideOpen: false, isLoggedIn: false};
+    this.state = {menuSlideOpen: false, isLoggedIn: false, userMobNum: ''};
   }
   componentDidMount() {
-
     if (this.getCookie('ucheck')) {
       let { isLoggedIn } = this.state
-      this.setState({isLoggedIn: !isLoggedIn})
+      const userMobNumCookie = getCookie('ucheck')
+      this.setState({isLoggedIn: !isLoggedIn, userMobNum: userMobNumCookie})
     }
+
   }
   getCookie(name) {
     var value = "; " + document.cookie;
@@ -32,7 +34,7 @@ class Header extends Component<Props> {
   }
 
   render() {
-    const { menuSlideOpen, isLoggedIn = true } = this.state
+    const { menuSlideOpen, isLoggedIn = false, userMobNum } = this.state
     const { variant = 'primary' } = this.props
     return (
       <div className={`header__wrap ${variant == 'secondary' ? 'secondaryHeader' : ''}`}>
@@ -55,14 +57,14 @@ class Header extends Component<Props> {
                   <img src="https://via.placeholder.com/85x85" />
                 </div>
                 <div className="header__menuSliderTitleDetails">
-                  <div className="header__menuSliderTitleName">
+                  {/*<div className="header__menuSliderTitleName">
                     Abhipray Shailendra
                   </div>
                   <div className="header__menuSliderTitleContact">
                     abhipray.social@gma.com
-                  </div>
+                  </div>*/}
                   <div className="header__menuSliderTitleContact">
-                    +91 8001188151
+                    +91 {userMobNum}
                   </div>
                 </div>
               </div>
@@ -74,12 +76,14 @@ class Header extends Component<Props> {
                   </span>
                   Gallery
                 </Link>
-                <Link to="/favorite" className="header__menuSliderOption">
-                  <span className="header__menuSliderOptionIcon">
-                    <img src={save} />
-                  </span>
-                  Favorites
-                </Link>
+                {isLoggedIn && (
+                  <Link to="/favorite" className="header__menuSliderOption">
+                    <span className="header__menuSliderOptionIcon">
+                      <img src={save} />
+                    </span>
+                    Favorites
+                  </Link>
+                )}
                 <a className="header__menuSliderOption">
                   <span className="header__menuSliderOptionIcon">
                     <img src={customise} />

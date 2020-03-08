@@ -11,8 +11,23 @@ import './__style.css'
 class Home extends Component<Props> {
   constructor(props) {
     super(props)
-    this.state = {showMobileValidationScreen: false}
+    this.state = {showMobileValidationScreen: false, isLoaded: false, itemList: []}
   }
+  componentDidMount() {
+    let lehId = 9
+    for (var i = 0; i < 4; i++) {
+      const apiUrl = `https://15.206.91.199:443/get_one?id=${lehId+i}`
+      fetch(apiUrl).then(res => res.json())
+        .then(response => {
+          this.setState({
+            isLoaded: true,
+          })
+          this.state.itemList.push(response[0])
+        })
+    }
+
+  }
+
   openMobValidSlider = () => {
     const { showMobileValidationScreen } = this.state
     this.setState({showMobileValidationScreen: !showMobileValidationScreen})
@@ -41,7 +56,7 @@ class Home extends Component<Props> {
       1100: 3,
       700: 2,
     }
-    const {showMobileValidationScreen} = this.state
+    const {showMobileValidationScreen, itemList} = this.state
 
     return (
       <div className="home__main">
@@ -54,7 +69,7 @@ class Home extends Component<Props> {
                 Stressed out with alot of question for your wedding day?
               </div>
               <div className="home__mainQryField">
-                <input type="text" placeholder="Where can I buy the best Wedding dress?" />
+                <input type="text" placeholder="Where can I buy the best Wedding dress?" readonly="readonly"/>
               </div>
               <div className="home__mainCta">
                 <a href="" onClick={this.askHandler}>Ask Pankhuri</a>
@@ -78,11 +93,10 @@ class Home extends Component<Props> {
                   className="my-masonry-grid"
                   columnClassName="my-masonry-grid_column"
                 >
-                  <div className="my-masonry-grid-imgs"><img src="https://res.cloudinary.com/abyy30/image/upload/v1581962546/img1_mqv5vl.jpg" /></div>
-                  <div className="my-masonry-grid-imgs"><img src="https://res.cloudinary.com/abyy30/image/upload/v1581962546/img4_oqt1ia.jpg" /></div>
-                  <div className="my-masonry-grid-imgs"><img src="https://res.cloudinary.com/abyy30/image/upload/v1581962546/img3_vmnzl8.jpg" /></div>
-                  <div className="my-masonry-grid-imgs"><img src="https://res.cloudinary.com/abyy30/image/upload/v1581962546/img4_oqt1ia.jpg" /></div>
-                  <div className="my-masonry-grid-imgs"><img src="https://res.cloudinary.com/abyy30/image/upload/v1581962546/img5_cy4bcu.jpg" /></div>
+                  {itemList && (itemList.map((eachItem, index) => (
+                    <div className="my-masonry-grid-imgs" key={eachItem.id}><img src={eachItem.photo} /></div>
+                  ))
+                  )}
                 </Masonry>
                 <div className="home__secondFoldImgsGridCta">
                   <Link to="/gallery" >

@@ -108,6 +108,7 @@
     }
   }
   &__menuSliderTitleDetails {
+    vertical-align: middle;
     @media(min-width: 641px) {
       text-align: left;
       display: inline-block;
@@ -116,6 +117,7 @@
   }
   &__menuSliderTitleImg {
     margin-bottom: 13px;
+    vertical-align: middle;
     > img {
       border-radius: 50%;
     }
