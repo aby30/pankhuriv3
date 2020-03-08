@@ -20,28 +20,75 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 11; }
+  z-index: 11;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  @media (max-width: 640px) {
+    .modal__imgCtrlWrap {
+      display: block; } }
 
 .modal__imgWrap {
   max-width: 100%;
-  -webkit-box-flex: 0.8;
-  -ms-flex: 0.8;
-  flex: 0.8; }
+  -webkit-box-flex: 0.2;
+  -ms-flex: 0.2;
+  flex: 0.2; }
   .modal__imgWrap > img {
     max-width: 100%; }
 
 .modal__img {
   display: none; }
+  .modal__img .react-player__preview {
+    position: relative;
+    z-index: 4; }
+    @media (max-width: 640px) {
+      .modal__img .react-player__preview {
+        z-index: 2; } }
   .modal__img.showImg {
     display: block;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 100% !important;
     margin: 0 auto; }
+    @media (max-width: 640px) {
+      .modal__img.showImg {
+        width: 100% !important; } }
   .modal__img > div:nth-child(1) {
-    width: auto !important; }
+    width: auto !important;
+    height: 80vh !important; }
+    @media (max-width: 640px) {
+      .modal__img > div:nth-child(1) {
+        width: 100% !important;
+        height: 100vh !important; } }
   .modal__img video {
     width: auto !important; }
+    @media (max-width: 640px) {
+      .modal__img video {
+        width: 100% !important;
+        height: 100vh !important; } }
+
+.modal__imgDescActns {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 0px;
+  width: 100%;
+  padding: 20px 20px 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  z-index: 4; }
+  @media (max-width: 640px) {
+    .modal__imgDescActns {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 20px 20px 20px;
+      background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#000000));
+      background: -webkit-linear-gradient(top, transparent 0%, #000000 100%);
+      background: -o-linear-gradient(top, transparent 0%, #000000 100%);
+      background: linear-gradient(180deg, transparent 0%, #000000 100%); } }
 
 .modal__imgShareMedias {
   position: absolute;
@@ -53,6 +100,9 @@
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
+  @media (min-width: 641px) {
+    .modal__imgShareMedias {
+      display: none; } }
   @media (max-width: 640px) {
     .modal__imgShareMedias {
       width: 92%;
@@ -68,6 +118,7 @@
       .modal__imgShareMedias:before {
         display: none; } }
   .modal__imgShareMedias.showShareModal {
+    display: block;
     opacity: 1;
     -webkit-transform: translate(0%, -20px);
     -ms-transform: translate(0%, -20px);
@@ -151,6 +202,16 @@
   -ms-flex: 0.1;
   flex: 0.1;
   cursor: pointer; }
+  @media (max-width: 640px) {
+    .modal__imgCtrlLeft {
+      position: absolute;
+      z-index: 1;
+      top: 0%;
+      height: 100vh;
+      width: 140px;
+      z-index: 3; }
+      .modal__imgCtrlLeft > img {
+        display: none; } }
 
 .modal__imgCtrlRight {
   right: 0px;
@@ -158,6 +219,17 @@
   -ms-flex: 0.1;
   flex: 0.1;
   cursor: pointer; }
+  @media (max-width: 640px) {
+    .modal__imgCtrlRight {
+      position: absolute;
+      z-index: 1;
+      top: 0%;
+      right: 0px;
+      height: 100vh;
+      width: 140px;
+      z-index: 3; }
+      .modal__imgCtrlRight > img {
+        display: none; } }
   .modal__imgCtrlRight > img {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
@@ -173,9 +245,6 @@
     cursor: pointer; }
 
 .modal__imgActions {
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
   width: 20px; }
   .modal__imgActions > img {
     max-width: 100%;
@@ -196,3 +265,22 @@
   cursor: pointer; }
   .modal__close > img {
     width: 24px; }
+
+.modal__imgDesc {
+  bottom: 70px;
+  left: 20px;
+  width: 70%;
+  display: none;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: left; }
+  @media (max-width: 640px) {
+    .modal__imgDesc {
+      display: block; } }
+
+.modal__imgDescTitle {
+  font-weight: 600;
+  margin: 0 0 10px; }
+
+.modal__imgDescSubTitle {
+  font-weight: 400; }

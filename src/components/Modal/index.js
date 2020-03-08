@@ -83,7 +83,7 @@ class Modal extends React.Component {
           <Overlay />
           <div className="modal__imgCtrlWrap">
 
-            <div className="modal__imgCtrlLeft" onClick={imgToShow > 1 ? this.prev : () => {} }>
+            <div className="modal__imgCtrlLeft" onClick={imgToShow > 1 ? this.prev : () => {} } onDrag={imgToShow > 1 ? this.prev : () => {} }>
               <img src={back} />
             </div>
 
@@ -92,50 +92,63 @@ class Modal extends React.Component {
                 return (
                   <div className={`modal__img ${imgToShow === index ? 'showImg' : ''}`} key={item.toString()}>
                     {/*<img src={item}/>*/}
-                    <ReactPlayer url={item.video} playing={imgToShow===index} controls style={{width: 'auto'}}/>
-                    <div className="modal__imgActions">
-                      <img src={share} onClick={this.showShareFn}/>
-                      {userMobNum.length > 1 && (
-                        <img src={heart} onClick={() => this.addFavourite(item.id)}/>)
-                      }
-                      <img src={chatCart} />
-                      <div className={`modal__imgShareMedias ${showShare ? 'showShareModal' : ''}`}>
-                        <div className="modal__imgShareMediaInner">
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={whatsapp} />
-                            <div>Whatsapp</div>
-                          </div>
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={facebook} />
-                            <div>Facebook</div>
-                          </div>
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={twitter} />
-                            <div>Twitter</div>
-                          </div>
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={whatsapp} />
-                            <div>Whatsapp</div>
-                          </div>
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={whatsapp} />
-                            <div>Whatsapp</div>
-                          </div>
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={whatsapp} />
-                            <div>Whatsapp</div>
-                          </div>
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={whatsapp} />
-                            <div>Whatsapp</div>
-                          </div>
-                          <div className="modal__imgShareMediaIcon">
-                            <img src={whatsapp} />
-                            <div>Whatsapp</div>
-                          </div>
+                    <ReactPlayer url={item.video} playing={imgToShow===index} controls={false} style={{width: 'auto'}} light={item.photo}/>
+                    <div className="modal__imgDescActns">
+                      <div className="modal__imgDesc">
+                        <div className="modal__imgDescTitle">
+                          {item.title}
                         </div>
-                        <div className="modal__imgShareMediaCancelMob" onClick={this.showShareFn}>
-                          <div>Cancel</div>
+                        <div className="modal__imgDescSubTitle">
+                          {item.description}
+                        </div>
+                        <div className="modal__imgDescColor">
+                          Color: {item.color}
+                        </div>
+                      </div>
+                      <div className="modal__imgActions">
+                        <img src={share} onClick={this.showShareFn}/>
+                        {userMobNum.length > 1 && (
+                          <img src={heart} onClick={() => this.addFavourite(item.id)}/>)
+                        }
+                        <img src={chatCart} />
+                        <div className={`modal__imgShareMedias ${showShare ? 'showShareModal' : ''}`}>
+                          <div className="modal__imgShareMediaInner">
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={whatsapp} />
+                              <div>Whatsapp</div>
+                            </div>
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={facebook} />
+                              <div>Facebook</div>
+                            </div>
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={twitter} />
+                              <div>Twitter</div>
+                            </div>
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={whatsapp} />
+                              <div>Whatsapp</div>
+                            </div>
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={whatsapp} />
+                              <div>Whatsapp</div>
+                            </div>
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={whatsapp} />
+                              <div>Whatsapp</div>
+                            </div>
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={whatsapp} />
+                              <div>Whatsapp</div>
+                            </div>
+                            <div className="modal__imgShareMediaIcon">
+                              <img src={whatsapp} />
+                              <div>Whatsapp</div>
+                            </div>
+                          </div>
+                          <div className="modal__imgShareMediaCancelMob" onClick={this.showShareFn}>
+                            <div>Cancel</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -144,7 +157,7 @@ class Modal extends React.Component {
               )}
             </div>
 
-            <div className="modal__imgCtrlRight" onClick={imgToShow-1 < imageList.length ? this.next : () => {} }>
+            <div className="modal__imgCtrlRight" onClick={imgToShow-1 < imageList.length ? this.next : () => {} } onDrag={imgToShow-1 < imageList.length ? this.next : () => {} }>
               <img src={back} />
             </div>
 
