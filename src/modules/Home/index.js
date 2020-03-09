@@ -35,7 +35,6 @@ class Home extends Component<Props> {
   askHandler = (e) => {
     e.preventDefault()
     const allCookies = document.cookie
-    const allCookieArr = allCookies.split("; ")
     if (allCookies.indexOf("; ucheck=") != -1) {
       this.tawkRender()
     } else {
@@ -68,9 +67,9 @@ class Home extends Component<Props> {
               <div className="home__tagline">
                 Stressed out with alot of question for your wedding day?
               </div>
-              <div className="home__mainQryField">
+              {/*<div className="home__mainQryField">
                 <input type="text" placeholder="Where can I buy the best Wedding dress?" readonly="readonly"/>
-              </div>
+              </div>*/}
               <div className="home__mainCta">
                 <a href="" onClick={this.askHandler}>Ask Pankhuri</a>
               </div>

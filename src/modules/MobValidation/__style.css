@@ -10,7 +10,7 @@
   right: 0px;
   width: 400px;
   height: 600px;
-  z-index: 11;
+  z-index: 21;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #002053;
@@ -72,8 +72,8 @@
       font-size: 24px;
       width: 100%; }
     .sliderValidation__input.otp > input {
-      padding: 0 0 18px 5px;
-      letter-spacing: 42px;
+      padding: 0 0 18px 10px;
+      letter-spacing: 37px;
       border-bottom: none;
       background-image: -webkit-gradient(linear, right top, left top, color-stop(70%, white), color-stop(0%, rgba(255, 255, 255, 0)));
       background-image: -webkit-linear-gradient(right, white 70%, rgba(255, 255, 255, 0) 0%);

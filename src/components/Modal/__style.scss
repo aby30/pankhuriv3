@@ -97,7 +97,7 @@
     }
     @media(max-width: 640px) {
       width: 92%;
-      bottom: 15px;
+      bottom: -5px;
       position: fixed;
       left: 4%;
       box-sizing: border-box;
@@ -113,7 +113,7 @@
       transform: translate(0%, -20px);
       @media(max-width: 640px) {
         opacity: 1;
-        transform: translate(0px, 0px);
+        transform: translate(0px, -20px);
       }
     }
   }
@@ -202,7 +202,11 @@
       width: 140px;
       z-index: 3;
       > img {
-        display: none;
+        // display: none;
+        position: relative;
+        top: 48%;
+        right: 50px;
+        opacity: 0.4;
       }
     }
   }
@@ -219,7 +223,11 @@
       width: 140px;
       z-index: 3;
       > img {
-        display: none;
+        // display: none;
+        position: relative;
+        top: 48%;
+        right: -50px;
+        opacity: 0.4
       }
     }
     > img {
