@@ -27,7 +27,7 @@ class Modal extends React.Component {
     const { imgToShowProp } = this.props
     this.setState({ imgToShow: imgToShowProp})
     const allCookies = document.cookie
-    if (allCookies.indexOf("; ucheck=") != -1) {
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       const userMobNumCookie = getCookie('ucheck')
       this.setState({ userMobNum: userMobNumCookie})
     }
@@ -52,7 +52,7 @@ class Modal extends React.Component {
   addFavourite = (lehengaId) => {
     const {userMobNum} = this.state
     const allCookies = document.cookie
-    if (allCookies.indexOf("; ucheck=") != -1) {
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       const userMobNum = getCookie('ucheck')
       const addFavUrl = `https://15.206.91.199:443/add_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
       fetch(addFavUrl).then(res => res.json())
@@ -72,7 +72,7 @@ class Modal extends React.Component {
   }
   askHandler = () => {
     const allCookies = document.cookie
-    if (allCookies.indexOf("; ucheck=") != -1) {
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       this.tawkRender()
     } else {
       this.openMobValidSlider()

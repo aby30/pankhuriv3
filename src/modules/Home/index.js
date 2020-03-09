@@ -35,7 +35,7 @@ class Home extends Component<Props> {
   askHandler = (e) => {
     e.preventDefault()
     const allCookies = document.cookie
-    if (allCookies.indexOf("; ucheck=") != -1) {
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       this.tawkRender()
     } else {
       this.openMobValidSlider()

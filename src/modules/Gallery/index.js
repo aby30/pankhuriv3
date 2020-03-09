@@ -58,8 +58,7 @@ class Gallery extends Component<Props> {
   }
   addFavourite = (lehengaId) => {
     const allCookies = document.cookie
-    const allCookieArr = allCookies.split("; ")
-    if (allCookies.indexOf("; ucheck=") != -1) {
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       const userMobNum = getCookie('ucheck')
       const addFavUrl = `https://15.206.91.199:443/add_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
       fetch(addFavUrl).then(res => res.json())

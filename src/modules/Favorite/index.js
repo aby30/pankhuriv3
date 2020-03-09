@@ -23,7 +23,7 @@ class Favorite extends Component<Props> {
   componentDidMount() {
 
     const allCookies = document.cookie
-    if (allCookies.indexOf("; ucheck=") != -1) {
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       const userMobNum = getCookie('ucheck')
       const allFavUrl = `https://15.206.91.199:443/get_favourites?phone_no=${userMobNum}`
       fetch(allFavUrl).then(res => res.json())
@@ -57,7 +57,7 @@ class Favorite extends Component<Props> {
 
   deleteFavourite = (lehengaId) => {
     const allCookies = document.cookie
-    if (allCookies.indexOf("; ucheck=") != -1) {
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       const userMobNum = getCookie('ucheck')
       const addFavUrl = `https://15.206.91.199:443/del_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
       fetch(addFavUrl).then(res => res.json())
