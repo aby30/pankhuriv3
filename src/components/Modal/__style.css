@@ -106,7 +106,7 @@
   @media (max-width: 640px) {
     .modal__imgShareMedias {
       width: 92%;
-      bottom: -5px;
+      bottom: -85px;
       position: fixed;
       left: 4%;
       -webkit-box-sizing: border-box;
@@ -126,9 +126,9 @@
     @media (max-width: 640px) {
       .modal__imgShareMedias.showShareModal {
         opacity: 1;
-        -webkit-transform: translate(0px, -20px);
-        -ms-transform: translate(0px, -20px);
-        transform: translate(0px, -20px); } }
+        -webkit-transform: translate(0px, -105px);
+        -ms-transform: translate(0px, -105px);
+        transform: translate(0px, -105px); } }
 
 .modal__imgShareMediaInner {
   background-color: #ffffff;
