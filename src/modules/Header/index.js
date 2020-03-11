@@ -16,21 +16,24 @@ class Header extends Component<Props> {
     this.state = {menuSlideOpen: false, isLoggedIn: false, userMobNum: ''};
   }
   componentDidMount() {
-    if (this.getCookie('ucheck')) {
-      let { isLoggedIn } = this.state
-      const userMobNumCookie = getCookie('ucheck')
-      this.setState({isLoggedIn: !isLoggedIn, userMobNum: userMobNumCookie})
-    }
+    this.loginValidate()
 
   }
-  getCookie(name) {
-    var value = "; " + document.cookie;
-    var parts = value.split("; " + name + "=");
-    if (parts.length == 2) return parts.pop().split(";").shift();
+  loginValidate = () => {
+    const mobNum = getCookie('ucheck')
+    if (mobNum) {
+      let { isLoggedIn } = this.state
+      this.setState({isLoggedIn: true, userMobNum: mobNum})
+    } else {
+      let { isLoggedIn } = this.state
+      this.setState({isLoggedIn: false, userMobNum: ''})
+    }
   }
+
   openSlider = () => {
     const { menuSlideOpen } = this.state
     this.setState({menuSlideOpen: !menuSlideOpen})
+    this.loginValidate()
   }
 
   render() {

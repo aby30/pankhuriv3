@@ -7,6 +7,7 @@ import whatsapp from '../common/icons/whatsapp.png';
 import facebook from '../common/icons/facebook.png';
 import twitter from '../common/icons/twitter.png';
 import heart from '../common/icons/save.png';
+import savedHeart from '../common/icons/savedHeart.png';
 import chatCart from '../common/icons/ChatCart.png';
 import ReactPlayer from 'react-player';
 import { getCookie } from '../../components/common/helper';
@@ -49,7 +50,7 @@ class Modal extends React.Component {
     let { showShare } = this.state;
     this.setState({ showShare: !showShare });
   }
-  addFavourite = (lehengaId) => {
+  addFavourite = (lehengaId, favId) => {
     const {userMobNum} = this.state
     const allCookies = document.cookie
     if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
@@ -59,6 +60,7 @@ class Modal extends React.Component {
         .then(response => {
           if (response === 'FAVOURITES INSERTED') {
             console.log('Favourite saved')
+            document.getElementById(favId).src = savedHeart
           }
         })
 
@@ -66,10 +68,12 @@ class Modal extends React.Component {
       this.openMobValidSlider()
     }
   }
+
   openMobValidSlider = () => {
     const { showMobileValidationScreen } = this.state
     this.setState({showMobileValidationScreen: !showMobileValidationScreen})
   }
+
   askHandler = () => {
     const allCookies = document.cookie
     if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
@@ -77,8 +81,8 @@ class Modal extends React.Component {
     } else {
       this.openMobValidSlider()
     }
-
   }
+
   tawkRender = () => {
     let { showMobileValidationScreen } = this.state
     this.setState({showMobileValidationScreen: false})
@@ -95,7 +99,7 @@ class Modal extends React.Component {
       "https://res.cloudinary.com/abyy30/image/upload/v1581962546/img4_oqt1ia.jpg",
       "https://res.cloudinary.com/abyy30/image/upload/v1581962546/img5_cy4bcu.jpg",
       "https://res.cloudinary.com/abyy30/image/upload/v1581962546/img6_arfaxj.jpg"
-    ], imgToShowProp, closeModal } = this.props
+    ], imgToShowProp, closeModal, showFav = true } = this.props
     const { imgToShow, showShare, userMobNum, showMobileValidationScreen } = this.state
     return (
       <div className="modal__mainWrap">
@@ -114,7 +118,7 @@ class Modal extends React.Component {
             <div className="modal__imgWrap">
               {imageList.map((item, index) => {
                 return (
-                  <div className={`modal__img ${imgToShow === index ? 'showImg' : ''}`} key={`${item.toString()}${index}`}>
+                  <div className={`modal__img ${imgToShow === index ? 'showImg' : ''}`} key={`${item.title}${index}`}>
                     {/*<img src={item}/>*/}
                     <ReactPlayer url={item.video} playing={imgToShow===index} controls={false} style={{width: 'auto'}} light={item.photo}/>
                     <div className="modal__imgDescActns">
@@ -131,7 +135,9 @@ class Modal extends React.Component {
                       </div>
                       <div className="modal__imgActions">
                         <img src={share} onClick={this.showShareFn}/>
-                        <img src={heart} onClick={() => this.addFavourite(item.id)}/>
+                        {showFav && (
+                          <img src={heart} onClick={() => this.addFavourite(item.id, `saveImg${index}`)} id={`saveImg${index}`}/>
+                        )}
                         <img src={chatCart} onClick={() => this.askHandler()}/>
                         <div className={`modal__imgShareMedias ${showShare ? 'showShareModal' : ''}`}>
                           <div className="modal__imgShareMediaInner">

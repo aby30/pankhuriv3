@@ -116,7 +116,7 @@ class Favorite extends Component<Props> {
               }
 
             </Masonry>
-            {showModal && <Modal imgToShowProp={modalImgToShow} closeModal={this.hideModalFunc} imageList={itemList}/>}
+            {showModal && <Modal imgToShowProp={modalImgToShow} closeModal={this.hideModalFunc} imageList={itemList} showFav={false}/>}
           </div>
         </div>
       </div>
