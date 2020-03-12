@@ -74,7 +74,10 @@
 .favorite__imgWrap {
   position: relative;
   border-radius: 8px;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
   .favorite__imgWrap > img {
     border-radius: 8px;
     max-width: 100%;

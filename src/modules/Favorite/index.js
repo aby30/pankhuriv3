@@ -55,8 +55,9 @@ class Favorite extends Component<Props> {
     });
   }
 
-  deleteFavourite = (lehengaId) => {
+  deleteFavourite = (lehengaId, divId) => {
     const allCookies = document.cookie
+    const { itemList } = this.state
     if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
       const userMobNum = getCookie('ucheck')
       const addFavUrl = `https://15.206.91.199:443/del_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
@@ -64,6 +65,20 @@ class Favorite extends Component<Props> {
         .then(response => {
           if (response === 'FAVOURITES DELETED') {
             console.log('Deleted')
+            document.getElementById(divId).style.transform = "translateY(-15px)"
+            document.getElementById(divId).style.opacity = "0"
+            setTimeout(() => {
+              document.getElementById(divId).remove()
+            },1100)
+
+            {/*setTimeout(() => {
+              let itemListArr = itemList.filter(function( obj ) {
+                return obj.id !== lehengaId;
+              });
+              this.setState({
+                itemList: itemListArr,
+              })
+            },1100);*/}
           }
         })
 
@@ -107,10 +122,10 @@ class Favorite extends Component<Props> {
               </div>*/}
 
               {itemList.map((eachItem, index) => (
-                <div className="favorite__imgWrap" key={eachItem.id}>
+                <div className="favorite__imgWrap" key={eachItem.id} id={`${eachItem.id}${index}`}>
                   {/*<img src="https://res.cloudinary.com/abyy30/image/upload/v1581962546/img1_mqv5vl.jpg" onClick={() => this.showModalFunc(1)}/>*/}
                   <img src={eachItem.photo} onClick={() => this.showModalFunc(index)}/>
-                  <div className="favorite__delete"><img src={deleteIcon} onClick={() => this.deleteFavourite(eachItem.id)}/></div>
+                  <div className="favorite__delete"><img src={deleteIcon} onClick={() => this.deleteFavourite(eachItem.id, `${eachItem.id}${index}`)}/></div>
                 </div>
               ))
               }

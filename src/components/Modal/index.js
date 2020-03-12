@@ -136,7 +136,7 @@ class Modal extends React.Component {
                       <div className="modal__imgActions">
                         <img src={share} onClick={this.showShareFn}/>
                         {showFav && (
-                          <img src={heart} onClick={() => this.addFavourite(item.id, `saveImg${index}`)} id={`saveImg${index}`}/>
+                          <img src={item.isFavourite ? savedHeart : heart} onClick={() => this.addFavourite(item.id, `saveImg${index}`)} id={`saveImg${index}`}/>
                         )}
                         <img src={chatCart} onClick={() => this.askHandler()}/>
                         <div className={`modal__imgShareMedias ${showShare ? 'showShareModal' : ''}`}>

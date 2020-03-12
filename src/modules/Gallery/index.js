@@ -26,7 +26,18 @@ class Gallery extends Component<Props> {
   }
 
   componentDidMount() {
-    const apiUrl = 'https://15.206.91.199:443/get_all'
+    this.fetchGalleryData()
+  }
+
+  fetchGalleryData = () => {
+    const mobNum = getCookie('ucheck')
+    let apiUrl
+    if (mobNum) {
+      apiUrl = `https://15.206.91.199:443/get_all?phone_no=${mobNum}`
+    } else {
+      apiUrl = 'https://15.206.91.199:443/get_all'
+    }
+
     fetch(apiUrl).then(res => res.json())
       .then(response => {
         this.setState({
