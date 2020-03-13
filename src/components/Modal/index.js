@@ -7,6 +7,8 @@ import whatsapp from '../common/icons/whatsapp.png';
 import facebook from '../common/icons/facebook.png';
 import twitter from '../common/icons/twitter.png';
 import heart from '../common/icons/save.png';
+import email from '../common/icons/email.png';
+import shareLink from '../common/icons/shareLink.png';
 import savedHeart from '../common/icons/savedHeart.png';
 import chatCart from '../common/icons/ChatCart.png';
 import ReactPlayer from 'react-player';
@@ -90,6 +92,13 @@ class Modal extends React.Component {
     Tawk_API.toggle()
   }
 
+  copyToClipboard = (contentToCopy) => {
+    let copyText = contentToCopy;
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+  }
+
   render() {
 
     const { imageList = [
@@ -141,41 +150,29 @@ class Modal extends React.Component {
                         <img src={chatCart} onClick={() => this.askHandler()}/>
                         <div className={`modal__imgShareMedias ${showShare ? 'showShareModal' : ''}`}>
                           <div className="modal__imgShareMediaInner">
-                            <div className="modal__imgShareMediaIcon">
-                              <img src={whatsapp} />
-                              <div>Whatsapp</div>
-                            </div>
-                            <div className="modal__imgShareMediaIcon">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pankhuri.co/" target="_blank" className="modal__imgShareMediaIcon">
                               <img src={facebook} />
                               <div>Facebook</div>
-                            </div>
-                            <div className="modal__imgShareMediaIcon">
-                              <img src={twitter} />
-                              <div>Twitter</div>
-                            </div>
-                            <div className="modal__imgShareMediaIcon">
+                            </a>
+                            {/*<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pankhuri.co/" className="modal__imgShareMediaIcon">
+                              <img src={facebook} />
+                              <div>Facebook</div>
+                            </a>*/}
+                            <a href="https://api.whatsapp.com/send?phone=916364047530" target="_blank" className="modal__imgShareMediaIcon">
                               <img src={whatsapp} />
                               <div>Whatsapp</div>
-                            </div>
-                            <div className="modal__imgShareMediaIcon">
-                              <img src={whatsapp} />
-                              <div>Whatsapp</div>
-                            </div>
-                            <div className="modal__imgShareMediaIcon">
-                              <img src={whatsapp} />
-                              <div>Whatsapp</div>
-                            </div>
-                            <div className="modal__imgShareMediaIcon">
-                              <img src={whatsapp} />
-                              <div>Whatsapp</div>
-                            </div>
-                            <div className="modal__imgShareMediaIcon">
-                              <img src={whatsapp} />
-                              <div>Whatsapp</div>
+                            </a>
+                            <a href="mailto:info@example.com?&subject=&body=https://www.pankhuri.co/" target="_blank" className="modal__imgShareMediaIcon">
+                              <img src={email} />
+                              <div>Email</div>
+                            </a>
+                            <div onClick={() => {navigator.clipboard.writeText('https://www.pankhuri.co/')}} className="modal__imgShareMediaIcon">
+                              <img src={shareLink} />
+                              <div>Copy Link</div>
                             </div>
                           </div>
                           <div className="modal__imgShareMediaCancelMob" onClick={this.showShareFn}>
-                            <div>Cancel</div>
+                            <div>Close</div>
                           </div>
                         </div>
                       </div>
