@@ -80,7 +80,7 @@ class Header extends Component<Props> {
                   Gallery
                 </Link>
                 {isLoggedIn && (
-                  <Link to="/favorite" className="header__menuSliderOption">
+                  <Link to="/favourite" className="header__menuSliderOption">
                     <span className="header__menuSliderOptionIcon">
                       <img src={save} />
                     </span>
@@ -105,12 +105,12 @@ class Header extends Component<Props> {
                   </span>
                   Offers
                 </a>
-                <a className="header__menuSliderOption">
+                <Link to="/about" className="header__menuSliderOption">
                   <span className="header__menuSliderOptionIcon">
                     <img src={aboutIcon} />
                   </span>
                   About Us
-                </a>
+                </Link>
               </div>
             </div>
           </div>

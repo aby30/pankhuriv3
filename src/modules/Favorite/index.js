@@ -43,6 +43,22 @@ class Favorite extends Component<Props> {
     this.setState({showMobileValidationScreen: !showMobileValidationScreen})
   }
 
+  askHandler = (e) => {
+    e.preventDefault()
+    const allCookies = document.cookie
+    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
+      this.tawkRender()
+    } else {
+      this.openMobValidSlider()
+    }
+  }
+  tawkRender = () => {
+    let { showMobileValidationScreen } = this.state
+    this.setState({showMobileValidationScreen: false})
+    const {Tawk_API} = window
+    Tawk_API.toggle()
+  }
+
   showModalFunc = (indexToShow) => {
     this.setState({
       showModal: true,
@@ -104,7 +120,7 @@ class Favorite extends Component<Props> {
             Favourite
           </div>
           <div className="favorite__msgCta">
-            <button type="button" onClick={this.openMobValidSlider}>
+            <button type="button" onClick={this.askHandler}>
               <img src={chat} />
             </button>
             <MobValidation showMob={showMobileValidationScreen}/>

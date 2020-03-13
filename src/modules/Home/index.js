@@ -40,7 +40,6 @@ class Home extends Component<Props> {
     } else {
       this.openMobValidSlider()
     }
-
   }
   tawkRender = () => {
     let { showMobileValidationScreen } = this.state
