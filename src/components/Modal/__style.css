@@ -174,7 +174,8 @@
   padding: 0px 10px;
   margin-bottom: 20px;
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  cursor: pointer; }
   @media (max-width: 640px) {
     .modal__imgShareMediaIcon {
       width: 18%; } }

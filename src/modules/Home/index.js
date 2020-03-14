@@ -16,7 +16,7 @@ class Home extends Component<Props> {
   componentDidMount() {
     let lehId = 9
     for (var i = 0; i < 4; i++) {
-      const apiUrl = `https://15.206.91.199:443/get_one?id=${lehId+i}`
+      const apiUrl = `https://15.206.91.199:443/get_one?id=${lehId+i}&phone_no=`
       fetch(apiUrl).then(res => res.json())
         .then(response => {
           this.setState({

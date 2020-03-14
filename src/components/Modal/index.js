@@ -150,11 +150,11 @@ class Modal extends React.Component {
                         <img src={chatCart} onClick={() => this.askHandler()}/>
                         <div className={`modal__imgShareMedias ${showShare ? 'showShareModal' : ''}`}>
                           <div className="modal__imgShareMediaInner">
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pankhuri.co/" target="_blank" className="modal__imgShareMediaIcon">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pankhuri.co/gallery" target="_blank" className="modal__imgShareMediaIcon">
                               <img src={facebook} />
                               <div>Facebook</div>
                             </a>
-                            {/*<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pankhuri.co/" className="modal__imgShareMediaIcon">
+                            {/*<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.pankhuri.co/gallery" className="modal__imgShareMediaIcon">
                               <img src={facebook} />
                               <div>Facebook</div>
                             </a>*/}
@@ -162,11 +162,11 @@ class Modal extends React.Component {
                               <img src={whatsapp} />
                               <div>Whatsapp</div>
                             </a>
-                            <a href="mailto:info@example.com?&subject=&body=https://www.pankhuri.co/" target="_blank" className="modal__imgShareMediaIcon">
+                            <a href="mailto:info@example.com?&subject=&body=https://www.pankhuri.co/gallery" target="_blank" className="modal__imgShareMediaIcon">
                               <img src={email} />
                               <div>Email</div>
                             </a>
-                            <div onClick={() => {navigator.clipboard.writeText('https://www.pankhuri.co/')}} className="modal__imgShareMediaIcon">
+                            <div onClick={() => {navigator.clipboard.writeText('https://www.pankhuri.co/gallery')}} className="modal__imgShareMediaIcon">
                               <img src={shareLink} />
                               <div>Copy Link</div>
                             </div>
