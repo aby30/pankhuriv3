@@ -75,7 +75,7 @@ class Header extends Component<Props> {
               <div className="header__menuSliderOptionsWrap">
                 <Link to="/gallery" className="header__menuSliderOption">
                   <span className="header__menuSliderOptionIcon">
-                    <img src={save} />
+                    <img src={orders} />
                   </span>
                   Gallery
                 </Link>
@@ -87,7 +87,7 @@ class Header extends Component<Props> {
                     Favorites
                   </Link>
                 )}
-                <a className="header__menuSliderOption">
+                {/*<a className="header__menuSliderOption">
                   <span className="header__menuSliderOptionIcon">
                     <img src={customise} />
                   </span>
@@ -104,7 +104,7 @@ class Header extends Component<Props> {
                     <img src={gift} />
                   </span>
                   Offers
-                </a>
+                </a>*/}
                 <Link to="/about" className="header__menuSliderOption">
                   <span className="header__menuSliderOptionIcon">
                     <img src={aboutIcon} />
