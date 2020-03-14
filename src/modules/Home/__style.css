@@ -2,16 +2,19 @@
   color: #ffffff; }
   @media (max-width: 640px) {
     .home__inner {
-      background: -webkit-linear-gradient(312.67deg, #8316FF 0%, #FC3470 100%);
-      background: -o-linear-gradient(312.67deg, #8316FF 0%, #FC3470 100%);
-      background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%); } }
+      background: -webkit-linear-gradient(312.67deg, #8316ff, #fc3470);
+      background: -o-linear-gradient(312.67deg, #8316ff, #fc3470);
+      background: linear-gradient(137.33deg, #8316ff, #fc3470); } }
 
 .home__firstFold {
   position: relative;
-  background-color: #002561;
+  background: -webkit-linear-gradient(312.67deg, #8316FF 0%, #FC3470 100%);
+  background: -o-linear-gradient(312.67deg, #8316FF 0%, #FC3470 100%);
+  background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%);
   padding: 134px 20px 68px; }
   @media (max-width: 640px) {
     .home__firstFold {
+      background: none;
       padding: 113px 20px 55px;
       background-color: transparent; } }
 
@@ -122,6 +125,8 @@
     padding: 29px 20px 20px;
     border-radius: 50%;
     background-color: #EC145A;
+    -webkit-box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.24);
     color: #ffffff;
     border: none;
     font-size: 20px;
@@ -168,6 +173,8 @@
     padding: 15px;
     border-radius: 4px;
     background-color: #EC145A;
+    -webkit-box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.24);
     color: #ffffff;
     border: none;
     font-size: 20px;
@@ -176,11 +183,14 @@
     outline: none; }
 
 .home__secondFold {
-  background-color: #001A44;
+  background: -webkit-linear-gradient(312.67deg, #8316FF 0%, #FC3470 100%);
+  background: -o-linear-gradient(312.67deg, #8316FF 0%, #FC3470 100%);
+  background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%);
   padding: 46px 0; }
   @media (max-width: 640px) {
     .home__secondFold {
       padding: 22px 0;
+      background: none;
       background-color: rgba(255, 255, 255, 0.15);
       overflow: hidden; } }
 

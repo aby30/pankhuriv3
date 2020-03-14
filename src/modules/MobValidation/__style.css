@@ -13,7 +13,7 @@
   z-index: 21;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: #002053;
+  background-color: #FB3571;
   color: #ffffff;
   padding: 38px;
   border-radius: 20px;
@@ -37,9 +37,7 @@
       -ms-transform: translate(100%, 0%);
       transform: translate(100%, 0%);
       border-radius: 0px;
-      background: -webkit-linear-gradient(335.67deg, #8316FF 0%, #FC3470 100%);
-      background: -o-linear-gradient(335.67deg, #8316FF 0%, #FC3470 100%);
-      background: linear-gradient(114.33deg, #8316FF 0%, #FC3470 100%); } }
+      background-color: #FB3571; } }
   .sliderValidation.SlideOpen {
     -webkit-transform: translate(0%, -50%);
     -ms-transform: translate(0%, -50%);

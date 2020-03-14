@@ -90,11 +90,13 @@
     }
   }
   &__menuSliderInner {
-    background-color: #002561;
+    // background-color: #002561;
+    // background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%);
+    background-color: #FB3571;
     color: #ffffff;
     height: 100%;
     @media(min-width: 641px) {
-      background-color: #002053;
+      // background-color: #002053;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 20px 20px 40px 0 rgba(0,0,0,0.15);
@@ -134,7 +136,9 @@
     margin-bottom: 13px;
   }
   &__menuSliderOptionsWrap {
-  	background-color: #002053;
+  	// background-color: #002053;
+    // background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%);
+    background-color: #DB1B55;
     height: 100%;
     padding-top: 37px;
     @media(min-width: 641px) {
@@ -151,7 +155,8 @@
     text-decoration: none;
     transition: background-color 0.3s ease;
     &:hover {
-      background-color: #0A2C64;
+      // background-color: #0A2C64;
+      background-color: rgba(255, 255,255, 0.1);
     }
     span {
       position: absolute;

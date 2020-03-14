@@ -19,7 +19,9 @@
   height: 600px;
   z-index: 21;
   box-sizing: border-box;
-  background-color: #002053;
+  // background-color: #002053;
+  // background: linear-gradient(114.33deg, #8316FF 0%, #FC3470 100%);
+  background-color: #FB3571;
   color: #ffffff;
   padding: 38px;
   border-radius: 20px;
@@ -35,7 +37,8 @@
     max-width: initial;
     transform: translate(100%, 0%);
     border-radius: 0px;
-    background: linear-gradient(114.33deg, #8316FF 0%, #FC3470 100%);
+    // background: linear-gradient(114.33deg, #8316FF 0%, #FC3470 100%);
+    background-color: #FB3571;
   }
   &.SlideOpen {
     transform: translate(0%, -50%);

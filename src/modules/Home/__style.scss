@@ -5,14 +5,16 @@
   &__inner {
     color: #ffffff;
     @media(max-width: 640px) {
-      background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%);
+      background: linear-gradient(137.33deg,#8316ff,#fc3470);
     }
   }
   &__firstFold {
     position: relative;
-    background-color: #002561;
+    // background-color: #002561;
+    background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%);
     padding: 134px 20px 68px;
     @media(max-width: 640px) {
+      background: none;
       padding: 113px 20px 55px;
       background-color: transparent;
     }
@@ -111,6 +113,7 @@
       padding: 29px 20px 20px;
       border-radius: 50%;
       background-color: #EC145A;
+      box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.24);
       color: #ffffff;
       border: none;
       font-size: 20px;
@@ -173,6 +176,7 @@
       padding: 15px;
       border-radius: 4px;
       background-color: #EC145A;
+      box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.24);
       color: #ffffff;
       border: none;
       font-size: 20px;
@@ -183,10 +187,12 @@
   }
 
   &__secondFold {
-    background-color: #001A44;
+    // background-color: #001A44;
+    background: linear-gradient(137.33deg, #8316FF 0%, #FC3470 100%);
     padding: 46px 0;
     @media(max-width: 640px) {
       padding: 22px 0;
+      background: none;
       background-color: rgba(255,255,255,0.15);
       overflow: hidden;
     }

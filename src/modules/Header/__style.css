@@ -84,12 +84,11 @@
     transform: translateX(0%); }
 
 .header__menuSliderInner {
-  background-color: #002561;
+  background-color: #FB3571;
   color: #ffffff;
   height: 100%; }
   @media (min-width: 641px) {
     .header__menuSliderInner {
-      background-color: #002053;
       border-radius: 20px;
       overflow: hidden;
       -webkit-box-shadow: 20px 20px 40px 0 rgba(0, 0, 0, 0.15);
@@ -128,7 +127,7 @@
   margin-bottom: 13px; }
 
 .header__menuSliderOptionsWrap {
-  background-color: #002053;
+  background-color: #DB1B55;
   height: 100%;
   padding-top: 37px; }
   @media (min-width: 641px) {
@@ -147,7 +146,7 @@
   -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease; }
   .header__menuSliderOption:hover {
-    background-color: #0A2C64; }
+    background-color: rgba(255, 255, 255, 0.1); }
   .header__menuSliderOption span {
     position: absolute;
     left: 35px;
