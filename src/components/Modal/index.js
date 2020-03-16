@@ -182,7 +182,7 @@ class Modal extends React.Component {
               )}
             </div>
 
-            <div className="modal__imgCtrlRight" onClick={imgToShow-1 < imageList.length ? this.next : () => {} } onDrag={imgToShow-1 < imageList.length ? this.next : () => {} }>
+            <div className="modal__imgCtrlRight" onClick={imgToShow+1 < imageList.length ? this.next : () => {} } onDrag={imgToShow+1 < imageList.length ? this.next : () => {} }>
               <img src={back} />
             </div>
 
