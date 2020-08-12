@@ -157,14 +157,14 @@
         margin-bottom: 30px;
       }
       &:nth-child(1) {
-        // > div:last-child {
-        //   display: none;
-        // }
-        // @media(max-width: 640px) {
-        //   > div:not(first-child) {
-        //     display: none;
-        //   }
-        // }
+        > div:last-child {
+          display: none;
+        }
+        @media(max-width: 640px) {
+          > div:not(first-child) {
+            display: none;
+          }
+        }
       }
     }
   }

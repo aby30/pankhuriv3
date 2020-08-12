@@ -54,21 +54,22 @@ class Modal extends React.Component {
   }
   addFavourite = (lehengaId, favId) => {
     const {userMobNum} = this.state
-    const allCookies = document.cookie
-    if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
-      const userMobNum = getCookie('ucheck')
-      const addFavUrl = `https://15.206.91.199:443/add_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
-      fetch(addFavUrl).then(res => res.json())
-        .then(response => {
-          if (response === 'FAVOURITES INSERTED') {
-            console.log('Favourite saved')
-            document.getElementById(favId).src = savedHeart
-          }
-        })
+    // const allCookies = document.cookie
+    document.getElementById(favId).src = savedHeart
+    // if (allCookies.indexOf("; ucheck=") != -1 || allCookies.indexOf("ucheck=") != -1) {
+    //   const userMobNum = getCookie('ucheck')
+    //   const addFavUrl = `https://15.206.91.199:443/add_favourites?phone_no=${userMobNum}&lehenga_id=${lehengaId}`
+    //   fetch(addFavUrl).then(res => res.json())
+    //     .then(response => {
+    //       if (response === 'FAVOURITES INSERTED') {
+    //         console.log('Favourite saved')
+    //         document.getElementById(favId).src = savedHeart
+    //       }
+    //     })
 
-    } else {
-      this.openMobValidSlider()
-    }
+    // } else {
+    //   this.openMobValidSlider()
+    // }
   }
 
   openMobValidSlider = () => {
@@ -120,7 +121,7 @@ class Modal extends React.Component {
           <MobValidation showMob={showMobileValidationScreen} onSuccessHook={this.tawkRender}/>
           <div className="modal__imgCtrlWrap">
 
-            <div className="modal__imgCtrlLeft" onClick={imgToShow > 1 ? this.prev : () => {} } onDrag={imgToShow > 1 ? this.prev : () => {} }>
+            <div className={`modal__imgCtrlLeft ${imgToShow === 0 ? 'hideNav' : ''}`} onClick={imgToShow > 0 ? this.prev : () => {} } onDrag={imgToShow > 1 ? this.prev : () => {} }>
               <img src={back} />
             </div>
 
@@ -129,7 +130,7 @@ class Modal extends React.Component {
                 return (
                   <div className={`modal__img ${imgToShow === index ? 'showImg' : ''}`} key={`${item.title}${index}`}>
                     {/*<img src={item}/>*/}
-                    <ReactPlayer url={item.video} playing={imgToShow===index} controls={false} style={{width: 'auto'}} light={item.photo}/>
+                    <ReactPlayer url={item.video} playing={imgToShow===index} controls={false} style={{width: 'auto'}} light={item.photo} loop/>
                     <div className="modal__imgDescActns">
                       <div className="modal__imgDesc">
                         <div className="modal__imgDescTitle">
@@ -182,7 +183,7 @@ class Modal extends React.Component {
               )}
             </div>
 
-            <div className="modal__imgCtrlRight" onClick={imgToShow+1 < imageList.length ? this.next : () => {} } onDrag={imgToShow+1 < imageList.length ? this.next : () => {} }>
+            <div className={`modal__imgCtrlRight ${imgToShow === imageList.length - 1 ? 'hideNav' : ''}`} onClick={imgToShow+1 < imageList.length ? this.next : () => {} } onDrag={imgToShow+1 < imageList.length ? this.next : () => {} }>
               <img src={back} />
             </div>
 

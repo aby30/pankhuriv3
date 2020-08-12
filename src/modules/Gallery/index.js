@@ -8,6 +8,25 @@ import savedHeart from '../../components/common/icons/savedHeart.png';
 import { getCookie } from '../../components/common/helper';
 import MobValidation from '../MobValidation';
 import Header from '../Header';
+// Importing Mock images
+import image1 from '../../components/common/mocked/images/mock_1.jpg'
+import image2 from '../../components/common/mocked/images/mock_2.jpg'
+import image3 from '../../components/common/mocked/images/mock_3.jpg'
+import image4 from '../../components/common/mocked/images/mock_4.jpg'
+import image5 from '../../components/common/mocked/images/mock_5.jpg'
+import image6  from '../../components/common/mocked/images/mock_6.jpg'
+import image7  from '../../components/common/mocked/images/mock_7.jpg'
+import image8  from '../../components/common/mocked/images/mock_8.jpg'
+import image9  from '../../components/common/mocked/images/mock_9.jpg'
+import image10  from '../../components/common/mocked/images/mock_10.jpg'
+import image11  from '../../components/common/mocked/images/mock_11.jpg'
+import image12  from '../../components/common/mocked/images/mock_12.jpg'
+import image13  from '../../components/common/mocked/images/mock_13.jpg'
+import image14  from '../../components/common/mocked/images/mock_14.jpg'
+import image15  from '../../components/common/mocked/images/mock_15.jpg'
+// import image16  from '../../components/common/mocked/images/mock_16.jpg'
+import video  from '../../components/common/mocked/videos/random.mp4'
+
 
 import './__style.css';
 
@@ -33,13 +52,169 @@ class Gallery extends Component<Props> {
     const mobNum = getCookie('ucheck')
     let apiUrl = `https://15.206.91.199:443/get_all?phone_no=${mobNum ? mobNum : ''}`
 
-    fetch(apiUrl).then(res => res.json())
-      .then(response => {
-        this.setState({
-          isLoaded: true,
-          itemList: response,
-        })
-      })
+    // fetch(apiUrl).then(res => res.json())
+    //   .then(response => {
+    //     this.setState({
+    //       isLoaded: true,
+    //       itemList: response,
+    //     })
+    //   })
+    // Mociking data
+    this.setState({
+      isLoaded: true,
+      itemList: [
+        {
+          "id": 9,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image1,
+          "video": video
+        },
+        {
+          "id": 10,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image2,
+          "video": video
+        },
+        {
+          "id": 11,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image3,
+          "video": video
+        },
+        {
+          "id": 12,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image4,
+          "video": video
+        },
+        {
+          "id": 13,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image5,
+          "video": video
+        },
+        {
+          "id": 14,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image6,
+          "video": video
+        },
+        {
+          "id": 15,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image7,
+          "video": video
+        },
+        {
+          "id": 16,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image8,
+          "video": video
+        },
+        {
+          "id": 17,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image9,
+          "video": video
+        },
+        {
+          "id": 18,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image10,
+          "video": video
+        },
+        {
+          "id": 19,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image11,
+          "video": video
+        },
+        {
+          "id": 20,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image12,
+          "video": video
+        },
+        {
+          "id": 16,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image13,
+          "video": video
+        },
+        {
+          "id": 21,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image14,
+          "video": video
+        },
+        {
+          "id": 22,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image15,
+          "video": video
+        },
+      ],
+    })
   }
 
   openMobValidSlider = () => {

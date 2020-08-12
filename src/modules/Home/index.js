@@ -4,6 +4,12 @@ import { Link, Redirect } from 'react-router-dom'
 import Masonry from 'react-masonry-css'
 import Header from '../Header'
 import chat from '../../components/common/icons/chat.png'
+// Importing Mock images
+import image1 from '../../components/common/mocked/images/mock_1.jpg'
+import image2 from '../../components/common/mocked/images/mock_2.jpg'
+import image3 from '../../components/common/mocked/images/mock_3.jpg'
+import image4 from '../../components/common/mocked/images/mock_4.jpg'
+import image5 from '../../components/common/mocked/images/mock_5.jpg'
 
 import './__style.css'
 
@@ -14,17 +20,73 @@ class Home extends Component<Props> {
     this.state = {showMobileValidationScreen: false, isLoaded: false, itemList: []}
   }
   componentDidMount() {
-    let lehId = 9
-    for (var i = 0; i < 4; i++) {
-      const apiUrl = `https://15.206.91.199:443/get_one?id=${lehId+i}&phone_no=`
-      fetch(apiUrl).then(res => res.json())
-        .then(response => {
-          this.setState({
-            isLoaded: true,
-          })
-          this.state.itemList.push(response[0])
-        })
-    }
+    // let lehId = 9
+    // for (var i = 0; i < 4; i++) {
+    //   const apiUrl = `https://15.206.91.199:443/get_one?id=${lehId+i}&phone_no=`
+    //   fetch(apiUrl).then(res => res.json())
+    //     .then(response => {
+    //       this.setState({
+    //         isLoaded: true,
+    //       })
+    //       this.state.itemList.push(response[0])
+    //     })
+    // }
+    // Mocking home data
+    this.setState({
+      itemList: [
+        {
+          "id": 9,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image1,
+          "video": "https://pankhuri-inventory.s3.ap-south-1.amazonaws.com/5.mp4"
+        },
+        {
+          "id": 10,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image2,
+          "video": "https://pankhuri-inventory.s3.ap-south-1.amazonaws.com/5.mp4"
+        },
+        {
+          "id": 11,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image3,
+          "video": "https://pankhuri-inventory.s3.ap-south-1.amazonaws.com/5.mp4"
+        },
+        {
+          "id": 12,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image4,
+          "video": "https://pankhuri-inventory.s3.ap-south-1.amazonaws.com/5.mp4"
+        },
+        {
+          "id": 13,
+          "title": "Raspberry Pink Kalidar Bridal Lehenga",
+          "description": "Kalidar velvet lehenga with hand-crafted, intricate work of aari and rhinestones. It comes with a heavy velvet blouse and soft net dupatta. ",
+          "color": "Pink",
+          "event": "Wedding / Reception",
+          "price": 30000,
+          "photo": image5,
+          "video": "https://pankhuri-inventory.s3.ap-south-1.amazonaws.com/5.mp4"
+        },
+      ]
+    })
+    
 
   }
 
