@@ -160,11 +160,11 @@
         > div:last-child {
           display: none;
         }
-        @media(max-width: 640px) {
-          > div:not(first-child) {
-            display: none;
-          }
-        }
+        // @media(max-width: 640px) {
+        //   > div:not(first-child) {
+        //     display: none;
+        //   }
+        // }
       }
     }
   }

@@ -167,9 +167,6 @@
     margin-bottom: 30px; }
   .home__secondFoldImgsGrid .my-masonry-grid_column:nth-child(1) > div:last-child {
     display: none; }
-  @media (max-width: 640px) {
-    .home__secondFoldImgsGrid .my-masonry-grid_column:nth-child(1) > div:not(first-child) {
-      display: none; } }
 
 .home__secondFoldImgsGridCta {
   text-align: center;
