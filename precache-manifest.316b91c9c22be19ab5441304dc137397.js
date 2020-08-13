@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "20ec97aabd07d63ad4e67432f8d10fc1",
+    "revision": "1f61ad2298fae1e41c054c8debfd6bb9",
     "url": "/pankhuriv3/index.html"
   },
   {
-    "revision": "acdff532a7e8620e5c49",
-    "url": "/pankhuriv3/static/css/main.6c96d3d3.chunk.css"
+    "revision": "cc9df4acd7dc725ff1b4",
+    "url": "/pankhuriv3/static/css/main.9675f089.chunk.css"
   },
   {
     "revision": "b81717aa24f6f5f5b0d7",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pankhuriv3/static/js/2.ef146d68.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "acdff532a7e8620e5c49",
-    "url": "/pankhuriv3/static/js/main.647b2fe1.chunk.js"
+    "revision": "cc9df4acd7dc725ff1b4",
+    "url": "/pankhuriv3/static/js/main.9aa849d5.chunk.js"
   },
   {
     "revision": "3efd873748adb29acb16",
